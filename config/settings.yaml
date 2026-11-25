@@ -1,0 +1,21 @@
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+
+nemsis:
+  version: "3.5"
+  dataset_year: 2025
+
+quality:
+  # Elements every 911 record should carry. Confirm against the NEMSIS data dictionary
+  # before relying on these; codes here are placeholders to be verified.
+  required_elements:
+    - eResponse.05   # type of service requested
+    - eTimes.03      # unit notified by dispatch
+    - eTimes.06      # unit arrived on scene
+    - eSituation.11  # provider's primary impression
+    - eDisposition.12  # incident/patient disposition
+  # Values NEMSIS uses for "not recorded / not applicable" — treat as missing
+  not_values: ["7701001", "7701003", "7701005"]
+  min_record_score: 0.8

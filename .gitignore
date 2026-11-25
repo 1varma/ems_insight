@@ -1,0 +1,26 @@
+# Data — never commit (even de-identified research data is under a use agreement)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+*.parquet
+*.csv
+*.sas7bdat
+*.zip
+
+# Secrets
+.env
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
